@@ -3,10 +3,10 @@
   window.__mowtPlatformDocsMounted = true;
 
   function createDocsUI() {
-    if (document.getElementById('mowt-docs-trigger')) return;
+    if (document.getElementById('national_roads-docs-trigger')) return;
 
     const btn = document.createElement('button');
-    btn.id = 'mowt-docs-trigger';
+    btn.id = 'national_roads-docs-trigger';
     btn.type = 'button';
     btn.textContent = 'Platform Documentation';
     btn.setAttribute('aria-label', 'Open Platform Documentation');
@@ -28,10 +28,10 @@
     });
 
     const backdrop = document.createElement('div');
-    backdrop.id = 'mowt-docs-modal';
+    backdrop.id = 'national_roads-docs-modal';
     backdrop.setAttribute('role', 'dialog');
     backdrop.setAttribute('aria-modal', 'true');
-    backdrop.setAttribute('aria-labelledby', 'mowt-docs-title');
+    backdrop.setAttribute('aria-labelledby', 'national_roads-docs-title');
     Object.assign(backdrop.style, {
       position: 'fixed',
       inset: '0',
@@ -62,10 +62,10 @@
     card.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #E2E8F0;padding-bottom:14px;margin-bottom:18px;">
         <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.06em;color:#0071E3;text-transform:uppercase;">Ministry of Works and Transport · Department of National Roads</div>
-          <h2 id="mowt-docs-title" style="margin:4px 0 0;font-size:20px;font-weight:800;color:#0F172A;">Platform Documentation: Uganda Network Traffic</h2>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.06em;color:#0071E3;text-transform:uppercase;">National Road Network Authority · National Road Network Administration</div>
+          <h2 id="national_roads-docs-title" style="margin:4px 0 0;font-size:20px;font-weight:800;color:#0F172A;">Platform Documentation: Uganda Network Traffic</h2>
         </div>
-        <button id="mowt-docs-close" type="button" aria-label="Close Platform Documentation" style="padding:6px 14px;border-radius:10px;border:1px solid #E2E8F0;background:#F5F5F7;color:#0F172A;font-size:12px;font-weight:700;cursor:pointer;">Close</button>
+        <button id="national_roads-docs-close" type="button" aria-label="Close Platform Documentation" style="padding:6px 14px;border-radius:10px;border:1px solid #E2E8F0;background:#F5F5F7;color:#0F172A;font-size:12px;font-weight:700;cursor:pointer;">Close</button>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px;">
@@ -115,7 +115,7 @@
     const close = () => { backdrop.style.display = 'none'; };
 
     btn.addEventListener('click', open);
-    card.querySelector('#mowt-docs-close').addEventListener('click', close);
+    card.querySelector('#national_roads-docs-close').addEventListener('click', close);
     backdrop.addEventListener('click', (e) => { if (e.target === backdrop) close(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
